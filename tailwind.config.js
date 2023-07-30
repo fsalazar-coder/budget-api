@@ -83,10 +83,10 @@ module.exports = {
         },
         'appear-color': {
           '0%': { backgroundColor: 'transparent' },
-          '100%': { backgroundColor: 'rgb(10,5,60)' },
+          '100%': { backgroundColor: 'rgb(220,252,231)' },
         },
         'disappear-color': {
-          '0%': { backgroundColor: 'rgb(10,5,60)' },
+          '0%': { backgroundColor: 'rgb(220,252,231)' },
           '100%': { backgroundColor: 'transparent' },
         },
         'appear-top': {

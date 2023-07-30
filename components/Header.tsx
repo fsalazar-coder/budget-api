@@ -9,7 +9,7 @@ export default function Header(props: any) {
   const [contactModalAnimationClose, setContactModalAnimationClose] = useState(false);
 
   return (
-    <div className='w-full h-full relative flex flex-col justify-end items-center bg-slate-100'>
+    <div className='w-full h-full relative flex flex-col justify-end items-center bg-green-50'>
       {/***Content***/}
       <div className='container w-full h-full relative px-10 lg:px-36 flex flex-col justify-center items-start'>
         {/**Title text */}

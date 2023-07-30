@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import Navbar from '../components/Navbar';                           /***Navbar component***/
-import Header from '../components/Header';                           /***Header component***/
-import Features from '../components/Features';                       /***About description component***/
-import Footer from '../components/Footer';                           /***Footer component***/
+import Navbar from '@/components/Navbar';                           /***Navbar component***/
+import Header from '@/components/Header';                           /***Header component***/
+import Features from '@/components/Features';                       /***About description component***/
+import Footer from '@/components/Footer';                           /***Footer component***/
 
 
 

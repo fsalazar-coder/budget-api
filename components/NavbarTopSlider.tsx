@@ -4,9 +4,11 @@ export default function NavbarTopSlider(props: any) {
   const navbarNarrowActive = props.navbarNarrowActive;
   const navbarFirstUse = props.navbarFirstUse;
 
+  const navbarTopSliderElementText = ['About US', 'Help', 'Blog', 'Login', 'Join'];
+
   return (
     <ul className={
-      `w-full h-fit fixed right-0 top-0 py-16 flex flex-col justify-start items-center bg-[rgb(10,15,70)] transition-all z-40
+      `w-full h-fit fixed right-0 top-0 py-16 flex flex-col justify-start items-center bg-green-100 transition-all z-40
       ${navbarNarrowActive ?
         'animate-[appear-top_0.50s_ease]'
         : navbarFirstUse ?
@@ -14,18 +16,17 @@ export default function NavbarTopSlider(props: any) {
           : 'hidden'
       }`
     }>
-      <li className='container w-full h-fit flex flex-row justify-center items-start list-none'
-      >
-        <h2 className='w-full h-full text-white text-sm font-semibold tracking-wider py-2 flex flex-row justify-center items-center'>
-          Login
-        </h2>
-      </li>
-      <li className='container w-full h-fit flex flex-row justify-center items-start list-none'
-      >
-        <h2 className='w-full h-full text-white text-sm font-semibold tracking-wider py-2 flex flex-row justify-center items-center'>
-          Join
-        </h2>
-      </li>
+      {
+        navbarTopSliderElementText.map((elementText: string) => {
+          return (
+            <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
+              <h2 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-base lg:text-lg xl:text-xl font-light hover:font-bold tracking-wider flex flex-row justify-center items-center cursor-pointer transition-all'>
+                {elementText}
+              </h2>
+            </li>
+          )
+        })
+      }
     </ul>
   )
 }
