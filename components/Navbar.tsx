@@ -103,9 +103,11 @@ export default function Navbar(props: any) {
                     {/**Navbar elements***/}
                     <ul className='w-full h-full flex flex-row justify-end items-center'>
                       {
-                        navbarElementText.map((elementText: string) => {
+                        navbarElementText.map((elementText: string, index: any) => {
                           return (
-                            <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
+                            <li
+                              key={index}
+                              className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
                               <h2 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-sm lg:text-base xl:text-lg font-light hover:font-bold tracking-wider flex flex-row justify-center items-center cursor-pointer transition-all'>
                                 {elementText}
                               </h2>
