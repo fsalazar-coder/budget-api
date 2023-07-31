@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import phoneImage from '@/public/images/smartphone_02.png';
+import phoneImageA from '@/public/images/iphone.png';
+import phoneImageB from '@/public/images/android-v2.png'
+import laptopImage from '@/public/images/laptop3.png'
 
 
 export default function Header(props: any) {
@@ -28,11 +30,29 @@ export default function Header(props: any) {
           </h5>
         </div>
         {/**Image decorator */}
-        <div className='w-6/5 h-auto absolute bottom-0 -right-10 z-20'>
+        <div className='w-auto h-[90%] absolute -bottom-[15%] right-[22%] flex flex-row z-30'>
           <Image
-            className='w-full h-auto flex flex-row justify-end drop-shadow-xl'
+            className='w-full h-full flex flex-row justify-end drop-shadow-md'
             alt='phone-example'
-            src={phoneImage}
+            src={phoneImageA}
+            width={1000}
+            height={800}
+          />
+        </div>
+        <div className='w-auto h-[80%] absolute bottom-[5%] right-[18%] flex flex-row z-[25]'>
+          <Image
+            className='w-full h-full flex flex-row justify-end drop-shadow-md'
+            alt='phone-example'
+            src={phoneImageB}
+            width={1000}
+            height={800}
+          />
+        </div>
+        <div className='w-auto h-1/2 absolute bottom-0 -right-[10%] flex flex-row z-20'>
+          <Image
+            className='w-auto h-full flex flex-row justify-end drop-shadow-md'
+            alt='laptop-example'
+            src={laptopImage}
             width={1000}
             height={800}
           />
