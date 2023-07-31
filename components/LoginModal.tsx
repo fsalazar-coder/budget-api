@@ -209,7 +209,7 @@ export default function LoginModal(props: any) {
               {/**link to register (join) */}
               <div className='w-full h-fit pb-4 flex flex-col justify-center items-center'>
                 <h5 className='w-fit h-fit text-gray-600 ttext-sm sm:text-base leading-none tracking-wider'>
-                  Don't have an DearHR account yet?
+                  Don&apos;t have an DearHR account yet?
                 </h5>
                 <p className='text-gray-600 text-sm md:text-base lg:text-lg font-semibold tracking-wider'>
                   Register here
