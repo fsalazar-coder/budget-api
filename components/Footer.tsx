@@ -6,7 +6,6 @@ import {
   IconInstagram,
   IconTwitter
 } from '@/icons/icons';
-import ContactModal from './ContactModal';
 
 
 
@@ -124,18 +123,6 @@ export default function Footer(props: any) {
           </ul>
         </div>
       </div>
-      {/**Hidden-visible contact modal */}
-      <ContactModal                                                                    /***Contact modal component***/
-        contactModal={contactModal}
-        contactModalAnimationClose={contactModalAnimationClose}
-        contactModalClose={() => {
-          setContactModal(false);
-          setContactModalAnimationClose(true);
-        }}
-        successMessage={props.successMessage}
-        successModalOpen={props.successModalClose}
-        successModalClose={props.successModalClose}
-      />
     </div>
   )
 }

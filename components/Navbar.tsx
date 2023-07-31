@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import NavbarTopSlider from './NavbarTopSlider';
+import LoginModal from './LoginModal';
 
 
 
@@ -8,6 +9,8 @@ export default function Navbar(props: any) {
   const [transparentBackground, setTransparentBackground] = useState(true);              /***Transparent background state: boolean***/
   const [navbarNarrowActive, setNavbarNarrowActive] = useState(false);
   const [navbarFirstUse, setNavbarFirstUse] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);                                   /***State login modal open: true or false***/
+  const [loginModalAnimationClose, setLoginModalAnimationClose] = useState(false);
 
   const screenNarrow = props.screenNarrow;
   const navbarElementText = ['About US', 'Help', 'Blog'];
@@ -116,14 +119,20 @@ export default function Navbar(props: any) {
                         })
                       }
                       <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
-                        <h2 className='w-full h-2/3 py-1 px-8 text-green-50 hover:text-white bg-green-400 hover:bg-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
-                          Login
-                        </h2>
+                        <button
+                          className='w-auto h-auto text-white px-6 py-3 flex flex-row justify-center items-center transition-all z-30'
+                          onClick={() => setLoginModal(true)}
+                        >
+                          <h3 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
+                            Login
+                          </h3>
+                        </button>
                       </li>
+
                       <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
-                        <h2 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
+                        <h3 className='w-full h-2/3 py-1 px-8 text-green-50 hover:text-white bg-green-400 hover:bg-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
                           Join
-                        </h2>
+                        </h3>
                       </li>
                     </ul>
                   </>
@@ -132,6 +141,7 @@ export default function Navbar(props: any) {
           </div>
         </div>
       </div>
+
       {/**navbar-top-slider to narrow screen: hidden-visible */}
       {
         screenNarrow ?
@@ -143,6 +153,16 @@ export default function Navbar(props: any) {
           />
           : ''
       }
+
+      {/**Hidden-visible login modal */}
+      <LoginModal                                                                        /***Contact modal component***/
+        loginModal={loginModal}
+        loginModalAnimationClose={loginModalAnimationClose}
+        loginModalClose={() => {
+          setLoginModal(false);
+          setLoginModalAnimationClose(true);
+        }}
+      />
     </>
   )
 }
