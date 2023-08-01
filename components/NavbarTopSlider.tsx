@@ -4,7 +4,7 @@ export default function NavbarTopSlider(props: any) {
   const navbarNarrowActive = props.navbarNarrowActive;
   const navbarFirstUse = props.navbarFirstUse;
 
-  const navbarTopSliderElementText = ['About US', 'Help', 'Blog', 'Login', 'Join'];
+  const navbarTopSliderElementText = ['About US', 'Help', 'Blog'];
 
   return (
     <ul className={
@@ -29,6 +29,24 @@ export default function NavbarTopSlider(props: any) {
           )
         })
       }
+      <li
+        key='login-navbar-buttom'
+        className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'
+        onClick={props.loginModalOpen}
+        >
+        <h2 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-base lg:text-lg xl:text-xl font-light hover:font-bold tracking-wider flex flex-row justify-center items-center cursor-pointer transition-all'>
+          Login
+        </h2>
+      </li>
+      <li
+        key='join-navbar-buttom'
+        className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'
+        onClick={props.joinModalOpen}
+        >
+        <h2 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-base lg:text-lg xl:text-xl font-light hover:font-bold tracking-wider flex flex-row justify-center items-center cursor-pointer transition-all'>
+          Join
+        </h2>
+      </li>
     </ul>
   )
 }

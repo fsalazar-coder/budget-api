@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import { IconArrowRight } from '@/icons/icons';
 import phoneImageA from '@/public/images/iphone.png';
 import phoneImageB from '@/public/images/android-v2.png'
 import laptopImage from '@/public/images/laptop3.png'
 
 
 export default function Header(props: any) {
-  
+
   return (
     <div className='w-full h-full relative flex flex-col justify-end items-center bg-green-50'>
       {/***Content***/}
@@ -24,6 +25,20 @@ export default function Header(props: any) {
           <h5 className='w-fit h-fit text-green-400 text-sm sm:text-xs md:text-sm lg:text-base xl:text-lg font-medium tracking-wider text-start py-1 flex flex-col justify-start'>
             Improving your experience with money
           </h5>
+        </div>
+        {/**button to open join modal (register) */}
+        <div className='w-full h-fit pt-10 flex flex-row justify-start items-center z-[35]'>
+          <button
+            className='w-fit h-fit px-8 py-3 text-green-50 hover:text-white md:hover:font-bold bg-violet-600 hover:bg-violet-900 flex flex-row justify-center items-center rounded-full cursor-pointer transform hover:scale-[1.1] transition-all z-30'
+            onClick={props.joinModalOpen}
+          >
+            <h3 className='w-full h-2/3 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center rounded-full transition-all'>
+              Create your BAPI account
+            </h3>
+            <i className='text-base xl:text-lg leading-none font-bold md:font-medium tracking-wider ml-1'>
+              <IconArrowRight />
+            </i>
+          </button>
         </div>
 
         {/**Image decorator */}

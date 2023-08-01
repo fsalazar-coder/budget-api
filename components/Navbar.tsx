@@ -126,7 +126,7 @@ export default function Navbar(props: any) {
                       <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
                         <button
                           className='w-auto h-auto px-6 py-3 flex flex-row justify-center items-center transition-all z-30'
-                          onClick={() => setLoginModal(true)}
+                          onClick={props.loginModalOpen}
                         >
                           <h3 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
                             Login
@@ -138,7 +138,7 @@ export default function Navbar(props: any) {
                       <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
                         <button
                           className='w-auto h-auto px-6 py-3 flex flex-row justify-center items-center transition-all z-30'
-                          onClick={() => setJoinModal(true)}
+                          onClick={props.joinModalOpen}
                         >
                           <h3 className='w-full h-2/3 py-1 px-8 text-green-50 hover:text-white bg-green-400 hover:bg-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
                             Join
@@ -161,40 +161,11 @@ export default function Navbar(props: any) {
             navbarNarrowActive={navbarNarrowActive}
             navbarFirstUse={navbarFirstUse}
             navbarNarrowActiveFalse={() => { setNavbarNarrowActive(false) }}
+            loginModalOpen={props.loginModalOpen}                                  /**props to open login modal */
+            joinModalOpen={props.joinModalOpen}                                    /**props to open join modal */
           />
           : ''
       }
-
-      {/**Hidden-visible login modal */}
-      <LoginModal                                                                        /***Login modal component***/
-        loginModal={loginModal}
-        loginModalAnimationClose={loginModalAnimationClose}
-        loginModalClose={() => {
-          setLoginModal(false);
-          setLoginModalAnimationClose(true);
-        }}
-        joinModalOpen={() => {
-          setLoginModal(false);
-          setLoginModalAnimationClose(true);
-          setJoinModal(true);
-        }}
-        
-      />
-
-      {/**Hidden-visible join modal */}
-      <JoinModal                                                                         /***Join modal component***/
-        joinModal={joinModal}
-        joinModalAnimationClose={joinModalAnimationClose}
-        joinModalClose={() => {
-          setJoinModal(false);
-          setJoinModalAnimationClose(true);
-        }}
-        loginModalOpen={() => {
-          setJoinModal(false);
-          setJoinModalAnimationClose(true);
-          setLoginModal(true);
-        }}
-      />
     </>
   )
 }
