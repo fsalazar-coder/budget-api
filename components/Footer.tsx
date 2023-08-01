@@ -40,7 +40,7 @@ export default function Footer(props: any) {
   return (
     <div className='w-full h-full relative flex flex-col justify-end'>
       {/***Links***/}
-      <div className='w-full h-auto py-3 flex flex-row justify-center items-center bg-black z-10'>
+      <div className='w-full h-auto py-3 flex flex-row justify-center items-center bg-green-600 z-10'>
         <div className='container w-full h-full px-5 flex flex-row justify-between items-start'>
           {/**location and phone */}
           <div className='w-1/2 h-full flex flex-col justify-center items-start'>
@@ -100,7 +100,7 @@ export default function Footer(props: any) {
       {/***Copyright footer***/}
       <div
         id='contact'
-        className='w-full h-auto sm:h-[5%] py-5 sm:py-2 flex flex-row justify-center items-center border-t border-[rgb(25,25,25,0.5)] bg-black z-10'
+        className='w-full h-auto sm:h-[5%] py-5 sm:py-2 flex flex-row justify-center items-center border-t border-green-300 bg-green-950 z-10'
       >
         <div className='container h-auto px-5 flex flex-col-reverse sm:flex-row justify-between items-center'>
           <h2 className='w-full sm:w-1/2 h-full text-white text-sm sm:text-xs md:text-sm lg:text-base text-center sm:text-start pt-2 sm:pt-0 z-40'>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import NavbarTopSlider from './NavbarTopSlider';
 import LoginModal from './LoginModal';
+import JoinModal from './JoinModal';
 
 
 
@@ -11,6 +12,8 @@ export default function Navbar(props: any) {
   const [navbarFirstUse, setNavbarFirstUse] = useState(false);
   const [loginModal, setLoginModal] = useState(false);                                   /***State login modal open: true or false***/
   const [loginModalAnimationClose, setLoginModalAnimationClose] = useState(false);
+  const [joinModal, setJoinModal] = useState(false);                                     /***State join modal open: true or false***/
+  const [joinModalAnimationClose, setJoinModalAnimationClose] = useState(false);
 
   const screenNarrow = props.screenNarrow;
   const navbarElementText = ['About US', 'Help', 'Blog'];
@@ -118,9 +121,11 @@ export default function Navbar(props: any) {
                           )
                         })
                       }
+
+                      {/**login buttom to open modal */}
                       <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
                         <button
-                          className='w-auto h-auto text-white px-6 py-3 flex flex-row justify-center items-center transition-all z-30'
+                          className='w-auto h-auto px-6 py-3 flex flex-row justify-center items-center transition-all z-30'
                           onClick={() => setLoginModal(true)}
                         >
                           <h3 className='w-full h-2/3 py-1 px-8 text-green-400 hover:text-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
@@ -129,10 +134,16 @@ export default function Navbar(props: any) {
                         </button>
                       </li>
 
+                      {/**Join buttom to open modal */}
                       <li className='w-fit h-fit px-2 flex flex-row justify-center items-start list-none'>
-                        <h3 className='w-full h-2/3 py-1 px-8 text-green-50 hover:text-white bg-green-400 hover:bg-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
-                          Join
-                        </h3>
+                        <button
+                          className='w-auto h-auto px-6 py-3 flex flex-row justify-center items-center transition-all z-30'
+                          onClick={() => setJoinModal(true)}
+                        >
+                          <h3 className='w-full h-2/3 py-1 px-8 text-green-50 hover:text-white bg-green-400 hover:bg-green-600 text-sm lg:text-base xl:text-lg font-semibold tracking-wider flex flex-row justify-center items-center border border-green-400 hover:border-green-600 rounded-full cursor-pointer transition-all'>
+                            Join
+                          </h3>
+                        </button>
                       </li>
                     </ul>
                   </>
@@ -155,12 +166,33 @@ export default function Navbar(props: any) {
       }
 
       {/**Hidden-visible login modal */}
-      <LoginModal                                                                        /***Contact modal component***/
+      <LoginModal                                                                        /***Login modal component***/
         loginModal={loginModal}
         loginModalAnimationClose={loginModalAnimationClose}
         loginModalClose={() => {
           setLoginModal(false);
           setLoginModalAnimationClose(true);
+        }}
+        joinModalOpen={() => {
+          setLoginModal(false);
+          setLoginModalAnimationClose(true);
+          setJoinModal(true);
+        }}
+        
+      />
+
+      {/**Hidden-visible join modal */}
+      <JoinModal                                                                         /***Join modal component***/
+        joinModal={joinModal}
+        joinModalAnimationClose={joinModalAnimationClose}
+        joinModalClose={() => {
+          setJoinModal(false);
+          setJoinModalAnimationClose(true);
+        }}
+        loginModalOpen={() => {
+          setJoinModal(false);
+          setJoinModalAnimationClose(true);
+          setLoginModal(true);
         }}
       />
     </>

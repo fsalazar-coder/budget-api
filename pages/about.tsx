@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';                           /***Navbar component***/
 import Header from '@/components/Header';                           /***Header component***/
-import Features from '@/components/Features';                       /***About description component***/
 import Footer from '@/components/Footer';                           /***Footer component***/
 
 
 
-export default function Home(): JSX.Element {
+export default function AboutUs(): JSX.Element {
 
   const [screenNarrow, setScreenNarrow] = useState(Boolean);                             /***State screen narrow: true or false***/
 
@@ -40,7 +39,9 @@ export default function Home(): JSX.Element {
         id='content-section'
         className='w-full h-auto bg-gradient-to-b from-white to-gray-200'
       >
-        <Features />
+        <h1 className='text-5xl text-gray-800 font-bold'>
+          BLOG
+        </h1>
       </section>
       {/***Contact section***/}
       <section
