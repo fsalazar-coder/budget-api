@@ -83,9 +83,10 @@ export default function Home(): JSX.Element {
         className='w-full h-auto'
       >
         {
-          featuresArray.map((features: any) => {
+          featuresArray.map((features: any, index: any) => {
             return (
               <Features
+                key={index}
                 subtitle={features.subtitle}
                 title={features.title}
                 description={features.description}
