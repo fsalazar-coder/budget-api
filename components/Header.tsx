@@ -42,7 +42,7 @@ export default function Header(props: any) {
         </div>
 
         {/**Image decorator */}
-        <div className='w-auto h-[90%] absolute -bottom-[20%] right-[2%] md:right-[22%] flex flex-row z-30'>
+        <div className='w-auto h-[70%] absolute bottom-0 right-[2%] md:right-[22%] flex flex-row z-30'>
           <Image
             className='w-full h-full flex flex-row justify-end drop-shadow-md'
             alt='phone-example'
@@ -51,7 +51,7 @@ export default function Header(props: any) {
             height={800}
           />
         </div>
-        <div className='w-auto h-[80%] absolute bottom-[5%] right-0 md:right-[20%] flex flex-row z-[25]'>
+        <div className='w-auto h-[60%] absolute bottom-[25%] right-0 md:right-[20%] flex flex-row z-[25]'>
           <Image
             className='w-full h-full flex flex-row justify-end drop-shadow-md'
             alt='phone-example'
@@ -60,7 +60,7 @@ export default function Header(props: any) {
             height={800}
           />
         </div>
-        <div className='w-auto h-1/2 absolute bottom-0 -right-[65%] md:-right-[10%] flex flex-row z-20'>
+        <div className='w-auto h-1/2 absolute bottom-[23%] -right-[65%] md:-right-[25%] flex flex-row z-20'>
           <Image
             className='w-auto h-full flex flex-row justify-end drop-shadow-md'
             alt='laptop-example'

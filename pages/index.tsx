@@ -71,7 +71,7 @@ export default function Home(): JSX.Element {
       {/***Header section***/}
       <section
         id='header-section'
-        className='w-full h-[350px] sm:h-[420px] lg:h-[615px]'
+        className='w-full h-[450px] md:h-[600px] lg:h-[800px]'
       >
         <Header
           joinModalOpen={() => setJoinModal(true)}                                         /**props to open join modal */
