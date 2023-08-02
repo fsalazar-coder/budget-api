@@ -43,7 +43,7 @@ export default function Features(props: any) {
           <p className='w-full h-fit text-slate-700 text-xs sm:text-sm lg:text-base text-justify bg-transparent z-10'>
             {props.description}
           </p>
-          <h1 className='w-fit h-3/4 absolute right-0 -top-1/3 text-[10rem] md:text-[15rem] lg:text-[20rem] text-transparent bg-gradient-to-b from-slate-300 via-slate-100 to-transparent bg-clip-text font-extrabold text-center flex flex-col justify-center z-0'>
+          <h1 className='w-fit h-3/4 absolute right-0 -top-1/3 md:-top-[20%] text-[10rem] md:text-[15rem] lg:text-[20rem] text-transparent bg-gradient-to-b from-slate-300 via-slate-100 to-transparent bg-clip-text font-extrabold text-center flex flex-col justify-center z-0'>
             {props.number}
           </h1>
         </div>
