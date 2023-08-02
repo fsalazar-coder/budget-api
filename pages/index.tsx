@@ -87,6 +87,7 @@ export default function Home(): JSX.Element {
             return (
               <Features
                 key={index}
+                number={index + 1}
                 subtitle={features.subtitle}
                 title={features.title}
                 description={features.description}
